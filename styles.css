@@ -34,3 +34,19 @@ html{scroll-padding-top:92px}
  .contact-actions{align-items:flex-start;flex-direction:column;gap:14px}
  .contact-actions .button{max-width:100%;overflow-wrap:anywhere}
 }
+
+
+/* Two-page portfolio layout */
+.page-intro{padding:76px 0 38px}
+.page-intro h1{font:700 clamp(42px,5.5vw,68px)/1.05 var(--display);letter-spacing:-.065em;margin:20px 0 14px}
+.page-intro h1 em{font-family:var(--serif);font-weight:400}
+.page-intro>p:last-child{max-width:560px;color:#69756d;font-size:14px;line-height:1.8}
+.compact-contact{padding-top:58px}
+.compact-contact .contact-wrap h2{font-size:clamp(44px,5vw,62px);margin:22px 0}
+.compact-contact .contact-footer{margin-top:48px}
+.compact-contact .contact-footer a{font:inherit}
+@media(max-width:650px){
+ .page-intro{padding:48px 0 24px}
+ .compact-contact{padding-top:50px}
+ .compact-contact .contact-footer{margin-top:34px}
+}
