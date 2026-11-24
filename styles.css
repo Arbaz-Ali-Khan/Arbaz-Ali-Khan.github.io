@@ -50,3 +50,32 @@ html{scroll-padding-top:92px}
  .compact-contact{padding-top:50px}
  .compact-contact .contact-footer{margin-top:34px}
 }
+
+
+/* Single-page portfolio navigation and persistent section portrait */
+html{scroll-behavior:smooth;scroll-padding-top:104px}
+.site-nav a.nav-home{color:var(--green);font-weight:800}
+.scroll-profile{position:fixed;z-index:80;left:clamp(18px,3vw,46px);top:132px;width:clamp(170px,17vw,220px);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.scroll-profile.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.scroll-profile-frame{background:#fff;padding:9px 9px 13px;box-shadow:0 12px 40px rgba(23,32,30,.12);border:1px solid var(--line)}
+.scroll-profile img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 24%}
+.scroll-profile span,.scroll-profile small{display:block;margin:10px 3px 0;font:9px var(--mono);letter-spacing:.1em;color:var(--ink)}
+.scroll-profile small{margin-top:4px;color:#78847c;font-size:8px}
+body.profile-active .section-wrap{width:min(980px,calc(100% - clamp(300px,25vw,370px)));margin-left:clamp(280px,23vw,350px);margin-right:32px}
+.page-scroll-controls{position:fixed;z-index:120;right:18px;bottom:28px;display:flex;flex-direction:column;gap:8px}
+.page-scroll-controls button{width:58px;min-height:58px;border:1px solid #cfd7cf;background:rgba(255,255,255,.94);color:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;box-shadow:0 5px 18px rgba(23,32,30,.09);transition:background .2s,color .2s,transform .2s}
+.page-scroll-controls button:hover{background:var(--green);color:#fff;transform:translateY(-2px)}
+.page-scroll-controls button span{font-size:19px;line-height:1}
+.page-scroll-controls button small{font:7px var(--mono);letter-spacing:.06em}
+@media(max-width:850px){
+ .scroll-profile{left:12px;width:130px;top:112px}
+ body.profile-active .section-wrap{width:calc(100% - 175px);margin-left:155px;margin-right:20px}
+}
+@media(max-width:650px){
+ .scroll-profile{display:none}
+ body.profile-active .section-wrap{width:calc(100% - 40px);margin-left:auto;margin-right:auto}
+ .page-scroll-controls{right:8px;bottom:14px;gap:6px}
+ .page-scroll-controls button{width:42px;min-height:44px}
+ .page-scroll-controls button small{font-size:6px}
+ .site-nav a.nav-home{display:block}
+}
