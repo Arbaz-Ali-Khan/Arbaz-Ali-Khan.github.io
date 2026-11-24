@@ -72,8 +72,10 @@ body.profile-active .section-wrap{width:min(980px,calc(100% - clamp(300px,25vw,3
  body.profile-active .section-wrap{width:calc(100% - 175px);margin-left:155px;margin-right:20px}
 }
 @media(max-width:650px){
- .scroll-profile{display:none}
- body.profile-active .section-wrap{width:calc(100% - 40px);margin-left:auto;margin-right:auto}
+ .scroll-profile{display:block;left:8px;top:84px;width:54px}
+ .scroll-profile-frame{padding:3px 3px 5px}
+ .scroll-profile span,.scroll-profile small{display:none}
+ body.profile-active .section-wrap{width:calc(100% - 94px);margin-left:82px;margin-right:12px}
  .page-scroll-controls{right:8px;bottom:14px;gap:6px}
  .page-scroll-controls button{width:42px;min-height:44px}
  .page-scroll-controls button small{font-size:6px}
