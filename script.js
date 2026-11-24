@@ -1,1 +1,14 @@
-const menuButton=document.querySelector(".menu-toggle");const nav=document.querySelector(".site-nav");menuButton?.addEventListener("click",()=>{const open=nav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open));menuButton.setAttribute("aria-label",open?"Close navigation":"Open navigation")});nav?.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.classList.remove("open");menuButton?.setAttribute("aria-expanded","false");menuButton?.setAttribute("aria-label","Open navigation")}));document.querySelector("#year").textContent=new Date().getFullYear();
+const menuButton=document.querySelector(".menu-toggle");
+const nav=document.querySelector(".site-nav");
+menuButton?.addEventListener("click",()=>{const open=nav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open));menuButton.setAttribute("aria-label",open?"Close navigation":"Open navigation")});
+nav?.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.classList.remove("open");menuButton?.setAttribute("aria-expanded","false");menuButton?.setAttribute("aria-label","Open navigation")}));
+const year=document.querySelector("#year");
+if(year) year.textContent=new Date().getFullYear();
+const profile=document.querySelector(".scroll-profile");
+const hero=document.querySelector(".hero");
+const updateProfile=()=>{const show=hero ? hero.getBoundingClientRect().bottom<110 : window.scrollY>250;profile?.classList.toggle("is-visible",show);document.body.classList.toggle("profile-active",show)};
+window.addEventListener("scroll",updateProfile,{passive:true});
+window.addEventListener("resize",updateProfile);
+updateProfile();
+document.querySelector("#page-up")?.addEventListener("click",()=>window.scrollBy({top:-Math.max(window.innerHeight*.82,500),behavior:"smooth"}));
+document.querySelector("#page-down")?.addEventListener("click",()=>window.scrollBy({top:Math.max(window.innerHeight*.82,500),behavior:"smooth"}));
